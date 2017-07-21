@@ -1,0 +1,27 @@
+{
+  "name": "hello-world-mongodb",
+  "version": "1.0.0",
+  "description": "Helloworld application to learn and practise MongoDB and mongoose",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victor-iyiola/Hello-World-MongoDB.git"
+  },
+  "keywords": [
+    "mongodb",
+    "mongoose",
+    "helloworld"
+  ],
+  "author": "Victor I. Afolabi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/victor-iyiola/Hello-World-MongoDB/issues"
+  },
+  "homepage": "https://github.com/victor-iyiola/Hello-World-MongoDB#readme",
+  "dependencies": {
+    "mongoose": "^4.11.3"
+  }
+}
