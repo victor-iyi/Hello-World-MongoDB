@@ -4,6 +4,7 @@
   "description": "Helloworld application to learn and practise MongoDB and mongoose",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,5 +25,8 @@
   "dependencies": {
     "mocha": "^3.4.2",
     "mongoose": "^4.11.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
-} 
+}
