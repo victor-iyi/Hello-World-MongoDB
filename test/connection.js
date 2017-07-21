@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // Connect to the database
 const database = 'helloworld';
-mongoose.connect(`mongodb://localhost/${helloworld}`);
+mongoose.connect(`mongodb://localhost/${database}`);
 
 // Listen for connection and error!
 mongoose.connection.once('open', () => {
