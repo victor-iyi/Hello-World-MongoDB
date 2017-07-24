@@ -12,8 +12,14 @@ describe('Finding documents', () => {
 
   // Find people
   it('finds credentials from collections', (done) => {
-    assert(true);
-    done();
+    const firstname = 'Dave';
+    const lastname = 'McFarland';
+    People.findOne({ firstname: 'Dave' }).then((data) => {
+      assert(data.firstname === firstname);
+      done();
+    }).catch((err) => {
+      console.log(`Could not find ${firstname}`);
+    });
   });
 
 });
