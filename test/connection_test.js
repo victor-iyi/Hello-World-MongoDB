@@ -1,5 +1,27 @@
 const mongoose = require('mongoose');
 
+// Describe tests
+describe('Database connection test', () => {
+
+  // Connect to database
+  it('Connect to the database', (done) => {
+    //Connect to the databae
+    const database = 'helloworld';
+    mongoose.connect(`mongodb://localhost/${database}`);
+    // Listen for connection on error.
+    mongoose.connection.once('open', () => {
+      console.log('Connected to the database');
+      done();
+    }).on('error', (err) => {
+      console.log('Could not connect to the database!');
+    });
+  }); // end it
+
+}); // end describe.
+
+/*
+const mongoose = require('mongoose');
+
 // ES6 Promise
 mongoose.Promise = global.Promise;
 
@@ -19,3 +41,4 @@ before((done) => {
 
 });
 
+*/
