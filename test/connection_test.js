@@ -24,7 +24,8 @@ before((done) => {
 beforeEach((done) => {
   // Drop the collection...
   mongoose.connection.collections.peoples.drop(() => {
-    console.log('Dropped collections');
+    console.log('Dropping collections');
     done(); // move on to the next test...
   });
+
 });

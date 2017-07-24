@@ -6,7 +6,8 @@ describe('Saving records to the database', () => {
   // Save record to the db
   it('Saves record(s) to the database', (done) => {
     const dave = new People({
-      name: 'Dave McFarland',
+      firstname: 'Dave',
+      lastname: 'McFarland',
       age: 43
     });
     // Save this document
