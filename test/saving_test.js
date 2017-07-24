@@ -1,22 +1,22 @@
 const assert = require('assert');
 const People = require('../models/people');
 
-describe('Saving records to the database', () => {
+// Save document(s) to collections
+describe('Saving documents to collections', () => {
 
-  // Save record to the db
-  it('Saves record(s) to the database', (done) => {
-    const dave = new People({
-      firstname: 'Dave',
-      lastname: 'McFarland',
-      age: 43
-    });
-    // Save this document
-    dave.save().then(() => {
-      assert(!dave.isNew);
+  it('Saves documents to the database', (done) => {
+    // John Doe
+    const john = new People({ firstname: 'John', lastname: 'Doe' });
+    john.save().then(() => {
+      assert(!john.isNew);
+      // done();
+    }).catch(() => console.log('Could not save John!') );
+    // Jane Doe
+    const jane = new People({ firstname: 'Jane', lastname: 'Doe' });
+    jane.save().then(() => {
+      assert(!jane.isNew);
       done();
-    }).catch((err) => {
-      console.error(err);
-    });;
+    }).catch((err) => console.log('Could not save Jane!') );
   });
 
 });
