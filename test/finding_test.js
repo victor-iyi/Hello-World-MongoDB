@@ -4,9 +4,9 @@ const assert = require('assert');
 // Find documents from the collection
 describe('Finding documents', () => {
   // Saves documents to be found
-  const firstname = 'Dave';
-  const lastname = 'McFarland';
-  const age = 43;
+  const firstname = 'Dave',
+        lastname = 'McFarland',
+        age = 43;
   let dave;
   beforeEach((done) => {
     dave = new People({ firstname, lastname, age });
