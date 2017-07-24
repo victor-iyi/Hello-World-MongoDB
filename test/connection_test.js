@@ -1,44 +1,30 @@
 const mongoose = require('mongoose');
 
-// Describe tests
-describe('Database connection test', () => {
-
-  // Connect to database
-  it('Connect to the database', (done) => {
-    //Connect to the databae
-    const database = 'helloworld';
-    mongoose.connect(`mongodb://localhost/${database}`);
-    // Listen for connection on error.
-    mongoose.connection.once('open', () => {
-      console.log('Connected to the database');
-      done();
-    }).on('error', (err) => {
-      console.log('Could not connect to the database!');
-    });
-  }); // end it
-
-}); // end describe.
-
-/*
-const mongoose = require('mongoose');
-
-// ES6 Promise
+// Using ES6 Promise library...
 mongoose.Promise = global.Promise;
 
-// Connect to the databse before test runs...
+// Connect to the database before running other tests...
 before((done) => {
-  // Connect to the database
+
+  // Connects to the mongodb and use this db
   const database = 'helloworld';
   mongoose.connect(`mongodb://localhost/${database}`);
 
-  // Listen for connection and error!
+  // Listen for connection and error events...
   mongoose.connection.once('open', () => {
-    console.log('Connection successful!');
+    console.log('Connected to the database!');
     done();
-  }).on('error', (err) => {
-    console.error('Could not connect to database')
+  }).on('error', (err) =>{
+    console.error('Oops! Could not connect to the database!');
   });
 
 });
 
-*/
+// Drop a collection before every tests...
+beforeEach((done) => {
+  // Drop the collection...
+  mongoose.connection.collections.peoples.drop(() => {
+    console.log('Dropped collections');
+    done(); // move on to the next test...
+  });
+});
