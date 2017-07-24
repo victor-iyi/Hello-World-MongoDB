@@ -5,18 +5,12 @@ const People = require('../models/people');
 describe('Saving documents to collections', () => {
 
   it('Saves documents to the database', (done) => {
-    // John Doe
-    const john = new People({ firstname: 'John', lastname: 'Doe' });
-    john.save().then(() => {
-      assert(!john.isNew);
-      // done();
-    }).catch(() => console.log('Could not save John!') );
-    // Jane Doe
-    const jane = new People({ firstname: 'Jane', lastname: 'Doe' });
-    jane.save().then(() => {
-      assert(!jane.isNew);
-      done();
-    }).catch((err) => console.log('Could not save Jane!') );
+    const firstname = 'Dave',
+          lastname = 'McFarland',
+          age = 43;
+    const dave = new People({ firstname, lastname, age });
+    // Save this document
+    dave.save().then(() => done() ).catch((err) => console.error(err) );
   });
 
 });
