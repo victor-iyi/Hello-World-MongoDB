@@ -5,35 +5,23 @@ describe('Database connection', function() {
   const db = new Database('helloworld');
 
   // connect
-  it ('should connect to mongodb server.', (done) => {
+  it ('should connect to mongodb server.', function(done) {
     db.connect((err) => {
       expect(err).to.be.null;
       done();
     });
   });
 
-  // create (insert)
-  it ('should insert document into database collection', (done) => {
-    expect(true).to.be.true;
-    done();
-  });
+  // create (insert) [ PENDING TEST ]
+  it ('should insert document into database collection');
 
-  // read
-  it ('should read documents from a collection', (done) => {
-    expect(true).to.be.true;
-    done();
-  });
+  // read [ PENDING TEST ]
+  it ('should read documents from a collection');
 
-  // update
-  it ('should a collection\'s document', (done) => {
-    expect(true).to.be.ok;
-    done();
-  });
+  // update [ PENDING TEST ]
+  it ('should a collection\'s document');
 
-  // delete
-  it ('should delete document(s) from a collection', (done) => {
-    expect(true).to.be.ok;
-    done();
-  });
+  // delete [ PENDING TEST ]
+  it ('should delete document(s) from a collection');
 
 });
