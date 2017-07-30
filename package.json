@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/victor-iyiola/Hello-World-MongoDB#readme",
   "dependencies": {
+		"bcrypt": "^1.0.2",
     "mocha": "^3.4.2",
     "mongoose": "^4.11.3"
   },
