@@ -7,10 +7,19 @@ function Database(name) {
 }
 
 // connect to mongodb
-Database.prototype.connect = function(cb) {
-  mongoose.connect(`mongodb://localhost/${this.name}`, { useMongoClient: true })
-    .then(() => cb(null))
-    .catch(err => cb(err));
+Database.prototype.connect = function() {
+  // using Promise
+  return new Promise(function(resolve, reject) {
+    mongoose.connect(`mongodb://localhost:27017/${this.name}`, { useMongoClient: true })
+      .then(resolve) // .then(() => resolve())
+      .catch(reject); // .catch(err => reject(err))
+  });
+  /**
+    * // using a callback
+    * mongoose.connect(`mongodb://localhost/${this.name}`, { useMongoClient: true })
+    * .then(() => cb(false))
+    * .catch(err => cb(err));
+    */
 };
 
 // create documents

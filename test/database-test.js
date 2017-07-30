@@ -6,10 +6,9 @@ describe('Database connection', function() {
 
   // connect
   it ('should connect to mongodb server.', function(done) {
-    db.connect((err) => {
-      expect(err).to.be.null;
-      done();
-    });
+    db.connect()
+      .then(() => done())
+      .catch((err) => done(err));
   });
 
   // create (insert) [ PENDING TEST ]
