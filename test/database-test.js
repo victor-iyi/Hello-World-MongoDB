@@ -18,7 +18,7 @@ describe('Database connection', function() {
   it ('should read documents from a collection');
 
   // update [ PENDING TEST ]
-  it ('should a collection\'s document');
+  it ('should update a collection\'s document');
 
   // delete [ PENDING TEST ]
   it ('should delete document(s) from a collection');
